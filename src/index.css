@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #ff6700;
+  --color-brand-blue: #0072bb;
+  --color-brand-red: #ff0055;
+  --color-brand-yellow: #ffcc00;
+  --color-table-bg: #f5ecce;
+  --color-table-header: #CEC4EB;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', 'Rajdhani', sans-serif;
+}
+
+/* Custom Table Styles */
+.dashed-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dashed-table td, .dashed-table th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 4px;
+}
+
+@keyframes pulse-blue {
+  0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(0, 136, 204, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+}
+
+.animate-pulse-blue {
+  animation: pulse-blue 2s infinite;
+}
+

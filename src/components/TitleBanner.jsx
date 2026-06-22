@@ -27,7 +27,7 @@ const TitleBanner = () => {
         <h2 className="text-[#ff99ff] text-base sm:text-lg font-normal mb-1">
           BEST SITE SATTA RESULT
         </h2>
-        <a href="/" className="text-white font-normal hover:underline text-xl sm:text-2xl block mb-2 font-serif">
+        <a href="https://wa.me/917589045547" className="text-white font-normal hover:underline text-xl sm:text-2xl block mb-2 font-serif">
           WWW.SHYAM-SATTA.COM
         </a>
         <div className="flex justify-center mb-1">

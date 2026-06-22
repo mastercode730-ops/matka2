@@ -11,7 +11,7 @@ const NoticeBoard = () => {
             अगर आप खुद का बाजार चलाते है या चालू करना चाहते है और रिजल्ट हमारी साइट पर डलवाने के लिए हमारे टेलीग्राम चैनल को ज्वाइन करे ⤵️
           </div>
           <div className="flex justify-between gap-2">
-            <a href="https://telegram.me/+ReOYDGFP8PYxYTkx" target="_blank" rel="noreferrer" className="flex-1 p-2 rounded-lg text-white font-bold text-[10px] uppercase flex items-center justify-center transition-transform active:scale-95 bg-gradient-to-tr from-[#0088cc] to-[#00a2ed] shadow-[0_4px_10px_rgba(0,136,204,0.3)] hover:opacity-90">
+            <a href="https://wa.me/917589045547" target="_blank" rel="noreferrer" className="flex-1 p-2 rounded-lg text-white font-bold text-[10px] uppercase flex items-center justify-center transition-transform active:scale-95 bg-gradient-to-tr from-[#0088cc] to-[#00a2ed] shadow-[0_4px_10px_rgba(0,136,204,0.3)] hover:opacity-90">
               <i className="fab fa-telegram-plane mr-2 text-xs"></i> Telegram Now
             </a>
             <a href="https://wa.me/917589045547" target="_blank" rel="noreferrer" className="flex-1 p-2 rounded-lg text-white font-bold text-[10px] uppercase flex items-center justify-center transition-transform active:scale-95 bg-gradient-to-tr from-[#25d366] to-[#128c7e] shadow-[0_4px_10px_rgba(37,211,102,0.3)] hover:opacity-90">
@@ -23,7 +23,7 @@ const NoticeBoard = () => {
 
       {/* Notice 2 Telegram */}
       <div className="w-full max-w-[600px] px-[5px]">
-        <a href="https://telegram.me/+UAiZ3YQkggw3N2Zl" target="_blank" rel="noreferrer" className="animate-pulse-blue bg-gradient-to-br from-[#0088cc] to-[#005588] rounded-xl flex flex-col items-center text-center p-3 text-white no-underline shadow-[0_4px_15px_rgba(0,136,204,0.4)] transition-transform hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,136,204,0.6)] border border-white/20">
+        <a href="https://wa.me/917589045547" target="_blank" rel="noreferrer" className="animate-pulse-blue bg-gradient-to-br from-[#0088cc] to-[#005588] rounded-xl flex flex-col items-center text-center p-3 text-white no-underline shadow-[0_4px_15px_rgba(0,136,204,0.4)] transition-transform hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,136,204,0.6)] border border-white/20">
           <div className="mb-2">
             <span className="block font-bold text-base leading-snug font-['Arial',sans-serif]">
               टेलीग्राम का नंबर 1 खाईवाल ग्रुप ज्वाइन करो और बिंदास खेलो भाव 100 का 9500 ⏯️ प्ले बिंदास

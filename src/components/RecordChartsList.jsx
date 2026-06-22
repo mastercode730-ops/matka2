@@ -16,7 +16,7 @@ const ChartSection = ({ year }) => (
     </div>
     <div className="flex flex-col gap-[2px] mt-[2px] px-[2px]">
       {games.map(game => (
-        <a key={game} href="#" className="bg-white border border-black rounded-full text-center py-1.5 text-black hover:bg-gray-100 uppercase text-[10px] sm:text-xs font-bold font-serif shadow-sm block w-full">
+        <a key={game} href="https://wa.me/917589045547" className="bg-white border border-black rounded-full text-center py-1.5 text-black hover:bg-gray-100 uppercase text-[10px] sm:text-xs font-bold font-serif shadow-sm block w-full">
           {game} RECORD CHART {year}
         </a>
       ))}
@@ -38,7 +38,7 @@ const RecordChartsList = () => {
           </h2>
         </div>
         <div className="flex flex-col gap-[2px] mt-[2px] px-[2px]">
-          <a href="#" className="bg-white border border-black rounded-full text-center py-1.5 text-black hover:bg-gray-100 uppercase text-[10px] sm:text-xs font-bold font-serif shadow-sm block w-full">
+          <a href="https://wa.me/917589045547" className="bg-white border border-black rounded-full text-center py-1.5 text-black hover:bg-gray-100 uppercase text-[10px] sm:text-xs font-bold font-serif shadow-sm block w-full">
             ALL GAME MIX RECORD CHART
           </a>
         </div>

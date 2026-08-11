@@ -1,6 +1,6 @@
 /* ════════════════════════════════════════════════════════
    UP BAZAR SATTA — Matka Guru (inspired by upbazarsatta.online)
-   High-Contrast Dark Crimson × Gold Trim × Live Marquee & Spinners
+   High-Contrast Dark Crimson × Gold Trim × 100% Fully Responsive
    ════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Share+Tech+Mono&family=Teko:wght@500;600;700&display=swap');
@@ -28,6 +28,11 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg);
   background-image: radial-gradient(circle at 50% 0%, #3b0714 0%, var(--bg) 60%);
@@ -37,7 +42,8 @@ body {
   font-size: 15px;
   line-height: 1.6;
   min-height: 100vh;
-  padding-bottom: 70px;
+  padding-bottom: 80px;
+  overflow-x: hidden;
 }
 
 a {
@@ -46,9 +52,10 @@ a {
 }
 
 .wrap {
+  width: 100%;
   max-width: 980px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 14px;
 }
 
 /* ── Live Rotating Spinner ──────────────────────────────── */
@@ -78,6 +85,7 @@ a {
 .btn-wa-up {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 8px 18px;
   background: linear-gradient(135deg, var(--wa), var(--wa-dark));
@@ -90,6 +98,7 @@ a {
   text-decoration: none;
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
   transition: transform 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-wa-up:hover {
@@ -98,49 +107,49 @@ a {
 }
 
 .wa-up-banner {
-  margin: 18px 0;
-  padding: 16px 20px;
+  margin: 16px 0;
+  padding: 14px 18px;
   background: linear-gradient(135deg, #1c080d 0%, #380a15 50%, #15803d 100%);
   border: 2px solid var(--gold);
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .wa-up-title {
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: 900;
   color: #ffffff;
 }
 
 .wa-up-sub {
-  font-size: 13px;
+  font-size: clamp(11px, 2vw, 13px);
   color: #fef08a;
   margin-top: 2px;
 }
 
 .floating-wa {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 16px;
+  left: 14px;
   z-index: 50;
 }
 
 .up-fab-wa {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 22px;
+  gap: 6px;
+  padding: 10px 18px;
   background: linear-gradient(135deg, var(--wa), var(--wa-dark));
   border: 2px solid var(--gold);
   border-radius: 999px;
   color: #ffffff !important;
   font-family: var(--font-main);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
@@ -159,22 +168,23 @@ a {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 8px 14px;
-  padding: 10px 16px;
+  gap: 6px 12px;
+  padding: 8px 12px;
   background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 50%, #7f1d1d 100%);
   border-bottom: 3px solid var(--gold);
   color: #ffffff;
   text-align: center;
+  font-size: 14px;
 }
 
 .lrs-tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 10px;
+  padding: 2px 8px;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -187,6 +197,7 @@ a {
   border-radius: 50%;
   box-shadow: 0 0 8px #43e660;
   animation: lrsBlink 1.2s infinite;
+  flex-shrink: 0;
 }
 
 @keyframes lrsBlink {
@@ -195,35 +206,35 @@ a {
 }
 
 .lrs-game {
-  font-size: 17px;
+  font-size: clamp(14px, 2.5vw, 17px);
   font-weight: 800;
 }
 
 .lrs-time {
   color: #fef08a;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .lrs-num {
-  padding: 3px 16px;
+  padding: 2px 14px;
   background: var(--gold);
   border-radius: 8px;
   color: #7f1d1d;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 900;
 }
 
 /* ── Header ─────────────────────────────────────────────── */
 .header-up {
   text-align: center;
-  padding: 24px 16px 14px;
+  padding: 20px 14px 12px;
   border-bottom: 2px solid var(--gold);
   background: rgba(0, 0, 0, 0.4);
 }
 
 .header-up h1 {
   font-family: var(--font-hero);
-  font-size: 44px;
+  font-size: clamp(32px, 8vw, 48px);
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--gold);
@@ -233,7 +244,7 @@ a {
 
 .header-up .sub {
   color: var(--dim);
-  font-size: 13px;
+  font-size: clamp(11px, 2vw, 13px);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 4px;
@@ -241,9 +252,9 @@ a {
 
 /* ── Live Draw Spotlight Card ───────────────────────────── */
 .spotlight-card {
-  margin: 20px auto;
+  margin: 16px auto;
   max-width: 620px;
-  padding: 24px 20px;
+  padding: 20px 16px;
   background: radial-gradient(circle at 50% 30%, #30060f 0%, #150307 100%);
   border: 2px solid var(--gold);
   border-radius: 16px;
@@ -256,24 +267,24 @@ a {
   padding: 4px 14px;
   background: var(--red);
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 1px;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .spotlight-name {
-  font-size: 28px;
+  font-size: clamp(22px, 5vw, 28px);
   font-weight: 900;
   color: #ffffff;
   letter-spacing: 1px;
 }
 
 .spotlight-number {
-  margin: 6px 0 14px;
+  margin: 4px 0 10px;
   font-family: var(--font-hero);
-  font-size: 76px;
+  font-size: clamp(54px, 14vw, 76px);
   font-weight: 700;
   line-height: 1;
   color: var(--gold);
@@ -286,16 +297,16 @@ a {
 /* ── Grid & Cards ───────────────────────────────────────── */
 .results-grid-up {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 14px;
-  margin-top: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
 }
 
 .card-up {
   background: var(--bg-card);
   border: 1px solid rgba(255, 204, 0, 0.35);
   border-radius: 12px;
-  padding: 16px;
+  padding: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -308,30 +319,30 @@ a {
 }
 
 .card-up-name {
-  font-size: 17px;
+  font-size: clamp(15px, 2.5vw, 17px);
   font-weight: 800;
   color: #ffffff;
 }
 
 .card-up-time {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   color: var(--dim);
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .card-up-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 52px;
-  height: 46px;
-  padding: 0 10px;
+  min-width: 48px;
+  height: 42px;
+  padding: 0 8px;
   background: rgba(0, 0, 0, 0.4);
   border: 2px solid var(--gold);
   border-radius: 8px;
   font-family: var(--font-hero);
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--gold);
 }
@@ -339,7 +350,7 @@ a {
 .card-up-badge.pending {
   border-color: var(--red);
   color: var(--red);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* ── Monthly Archive Table ──────────────────────────────── */
@@ -347,13 +358,15 @@ a {
   background: rgba(0, 0, 0, 0.4);
   border: 2px solid var(--gold);
   border-radius: 14px;
-  padding: 18px;
-  margin: 24px 0 32px;
+  padding: 16px 10px;
+  margin: 20px 0 28px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .table-up {
   width: 100%;
+  min-width: 460px;
   border-collapse: collapse;
   font-family: var(--font-mono);
   font-size: 13px;
@@ -361,15 +374,16 @@ a {
 }
 
 .table-up th {
-  padding: 10px 8px;
+  padding: 10px 6px;
   background: rgba(255, 204, 0, 0.15);
   border-bottom: 2px solid var(--gold);
   color: var(--gold);
   font-weight: 800;
+  font-size: 12px;
 }
 
 .table-up td {
-  padding: 8px 6px;
+  padding: 7px 4px;
   border: 1px solid rgba(255, 204, 0, 0.15);
 }
 
@@ -387,19 +401,19 @@ a {
 .up-nav-btns {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 10px;
+  margin-top: 14px;
   flex-wrap: wrap;
 }
 
 .up-btn {
-  padding: 8px 18px;
+  padding: 7px 16px;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid var(--gold);
   border-radius: 999px;
   color: var(--gold);
   font-family: var(--font-main);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -414,26 +428,26 @@ a {
 /* ── Footer ─────────────────────────────────────────────── */
 .footer-up {
   text-align: center;
-  padding: 30px 0;
+  padding: 24px 0;
   border-top: 1px solid rgba(255, 204, 0, 0.3);
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .footer-up select {
-  padding: 8px 16px;
+  padding: 6px 12px;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid var(--gold);
   border-radius: 6px;
   color: var(--gold);
   font-family: var(--font-main);
-  font-size: 14px;
-  margin: 0 4px;
+  font-size: 13px;
+  margin: 4px 3px;
 }
 
 .floating-bar {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  right: 14px;
   z-index: 50;
 }
 
@@ -441,14 +455,21 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 12px 22px;
+  padding: 10px 18px;
   background: var(--gold);
   border: none;
   border-radius: 999px;
   color: #17070b;
   font-family: var(--font-main);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
   cursor: pointer;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 480px) {
+  .wa-up-banner {
+    flex-direction: column;
+    text-align: center;
+  }
 }

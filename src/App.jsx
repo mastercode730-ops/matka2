@@ -6,6 +6,7 @@ import {
   SITE_DOMAIN,
 } from "./constants";
 import { fetchTodayResults, fetchMonthlyChart, fetchAnnouncement } from "./api";
+import InformationalContent from "./components/InformationalContent";
 
 const MONTH_NAMES = [
   "January",
@@ -24,6 +25,7 @@ const MONTH_NAMES = [
 const REFRESH_MS = 15_000;
 
 export default function App() {
+  const [lang, setLang] = useState("hi");
   const [games, setGames] = useState([]);
   const [todayDate, setTodayDate] = useState("");
   const [yesterdayDate, setYDate] = useState("");
@@ -393,6 +395,9 @@ export default function App() {
             </button>
           </div>
         </div>
+
+        {/* ── INFORMATIONAL GUIDE & RECORD CONTENT SECTION (HINDI / ENGLISH TOGGLE) ── */}
+        <InformationalContent lang={lang} setLang={setLang} />
 
         {/* ── FOOTER ── */}
         <footer className="footer-up">

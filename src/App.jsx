@@ -7,6 +7,9 @@ import {
 } from "./constants";
 import { fetchTodayResults, fetchMonthlyChart, fetchAnnouncement } from "./api";
 import InformationalContent from "./components/InformationalContent";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsConditions from "./components/TermsConditions";
+import Disclaimer from "./components/Disclaimer";
 
 const MONTH_NAMES = [
   "January",
@@ -25,6 +28,15 @@ const MONTH_NAMES = [
 const REFRESH_MS = 15_000;
 
 export default function App() {
+  const [currentPath, setCurrentPath] = useState(() => {
+    if (typeof window !== "undefined") {
+      const p = window.location.pathname.toLowerCase().replace(/\/$/, "");
+      if (p === "/privacy" || p === "/privacy-policy") return "/privacy";
+      if (p === "/terms" || p === "/terms-and-conditions" || p === "/terms-conditions") return "/terms";
+      if (p === "/disclaimer") return "/disclaimer";
+    }
+    return "/";
+  });
   const [lang, setLang] = useState("hi");
   const [games, setGames] = useState([]);
   const [todayDate, setTodayDate] = useState("");
@@ -39,6 +51,26 @@ export default function App() {
   );
   const [chartData, setChartData] = useState(null);
   const [announcement, setAnnouncement] = useState(null);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const p = window.location.pathname.toLowerCase().replace(/\/$/, "");
+      if (p === "/privacy" || p === "/privacy-policy") setCurrentPath("/privacy");
+      else if (p === "/terms" || p === "/terms-and-conditions" || p === "/terms-conditions") setCurrentPath("/terms");
+      else if (p === "/disclaimer") setCurrentPath("/disclaimer");
+      else setCurrentPath("/");
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const navigateTo = (path) => {
+    try {
+      window.history.pushState({}, "", path);
+    } catch (e) {}
+    setCurrentPath(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const loadResults = useCallback(async () => {
     try {
@@ -162,7 +194,13 @@ export default function App() {
 
       {/* ── HEADER ── */}
       <header className="header-up">
-        <h1>{SITE_NAME}</h1>
+        <h1
+          style={{ cursor: "pointer" }}
+          onClick={() => navigateTo("/")}
+          title="होम पेज पर जाएं"
+        >
+          {SITE_NAME}
+        </h1>
         <div className="sub">
           {fmtHindiDate(todayDate || new Date())} &bull; {SITE_DOMAIN}
         </div>
@@ -213,9 +251,17 @@ export default function App() {
         </div>
       )}
 
-      <div className="wrap">
-        {/* ── WHATSAPP BANNER ── */}
-        <div className="wa-up-banner">
+      {/* ── CONDITIONAL ROUTING: LEGAL PAGES OR LANDING PAGE ── */}
+      {currentPath === "/privacy" ? (
+        <PrivacyPolicy onNavigate={navigateTo} />
+      ) : currentPath === "/terms" ? (
+        <TermsConditions onNavigate={navigateTo} />
+      ) : currentPath === "/disclaimer" ? (
+        <Disclaimer onNavigate={navigateTo} />
+      ) : (
+        <div className="wrap">
+          {/* ── WHATSAPP BANNER ── */}
+          <div className="wa-up-banner">
           <div>
             <div className="wa-up-title">
               👑 सीधा खाईवाल दरबार &bull; UP BAZAR SATTA FAST RESULTS
@@ -414,6 +460,34 @@ export default function App() {
               💬 24x7 WhatsApp हेल्पलाइन: {WHATSAPP_NUMBER}
             </a>
           </div>
+
+          {/* ── LEGAL LINKS ── */}
+          <div className="footer-legal-links">
+            <button
+              type="button"
+              onClick={() => navigateTo("/privacy")}
+              className="footer-legal-link-btn"
+            >
+              Privacy Policy
+            </button>
+            <span className="sep">•</span>
+            <button
+              type="button"
+              onClick={() => navigateTo("/terms")}
+              className="footer-legal-link-btn"
+            >
+              Terms &amp; Conditions
+            </button>
+            <span className="sep">•</span>
+            <button
+              type="button"
+              onClick={() => navigateTo("/disclaimer")}
+              className="footer-legal-link-btn"
+            >
+              Disclaimer
+            </button>
+          </div>
+
           <div>
             <select
               value={chartMonth}
@@ -440,6 +514,7 @@ export default function App() {
           </div>
         </footer>
       </div>
+      )}
 
       {/* FLOATING WHATSAPP BUTTON */}
       <div className="floating-wa">

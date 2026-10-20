@@ -5,10 +5,13 @@ const Footer = () => {
     <>
       <div className="w-full bg-black flex flex-col items-center py-4 px-2 text-center pb-20">
         <div className="flex gap-2 mb-4 justify-center flex-wrap">
-          <a href="https://wa.me/918360750829" className="bg-yellow-400 text-black border border-white font-bold px-3 py-1 text-xs rounded shadow-md uppercase">
+          <a href="/privacy" className="bg-yellow-400 text-black border border-white font-bold px-3 py-1 text-xs rounded shadow-md uppercase">
             Privacy Policy
           </a>
-          <a href="https://wa.me/918360750829" className="bg-yellow-400 text-black border border-white font-bold px-3 py-1 text-xs rounded shadow-md uppercase">
+          <a href="/terms" className="bg-yellow-400 text-black border border-white font-bold px-3 py-1 text-xs rounded shadow-md uppercase">
+            Terms &amp; Conditions
+          </a>
+          <a href="/disclaimer" className="bg-yellow-400 text-black border border-white font-bold px-3 py-1 text-xs rounded shadow-md uppercase">
             Disclaimer
           </a>
         </div>
